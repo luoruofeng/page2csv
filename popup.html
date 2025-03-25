@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Page2CSV</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 900px;
+      margin: 0;
+      padding: 10px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 400px;
+    }
+    .loading {
+      text-align: center;
+      padding: 20px;
+      font-size: 16px;
+    }
+    .table-container {
+      flex: 1;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f2f2f2;
+      position: sticky;
+      top: 0;
+    }
+    .url-cell {
+      max-width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .title-cell {
+      max-width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+    }
+    .select-all-container {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="loading" class="loading">正在加载页面链接，请等待5秒...</div>
+    <div id="content" style="display: none;">
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th width="40">选择</th>
+              <th>标题</th>
+              <th>链接地址</th>
+            </tr>
+          </thead>
+          <tbody id="links-table">
+            <!-- 链接将在这里动态添加 -->
+          </tbody>
+        </table>
+      </div>
+      <div class="controls">
+        <div class="select-all-container">
+          <input type="checkbox" id="select-all">
+          <label for="select-all">全选</label>
+        </div>
+        <button id="export-csv" disabled>保存为CSV</button>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
