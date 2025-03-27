@@ -84,6 +84,13 @@
   <div class="container">
     <div id="loading" class="loading">正在加载页面链接，请等待5秒...</div>
     <div id="content" style="display: none;">
+      <div class="controls">
+        <div class="select-all-container">
+          <input type="checkbox" id="select-all">
+          <label for="select-all">全选</label>
+        </div>
+        <button id="export-csv" disabled>保存为CSV</button>
+      </div>
       <div class="table-container">
         <table>
           <thead>
@@ -97,13 +104,6 @@
             <!-- 链接将在这里动态添加 -->
           </tbody>
         </table>
-      </div>
-      <div class="controls">
-        <div class="select-all-container">
-          <input type="checkbox" id="select-all">
-          <label for="select-all">全选</label>
-        </div>
-        <button id="export-csv" disabled>保存为CSV</button>
       </div>
     </div>
   </div>
